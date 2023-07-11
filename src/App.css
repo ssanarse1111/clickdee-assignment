@@ -1,38 +1,192 @@
-.App {
-  text-align: center;
+.textDiv {
+  width: 48.2%;
+  height: calc(25.34722*1vw);
+  z-index: 1;
+  padding: calc(5.55556*1vw) calc(6.94444*1vw) calc(2.77778*1vw);
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chooseitem {
+  position: relative;
+  width: 25.9%;
+  height: calc(25.34722*1vw);
+  z-index: 0;
+  background-color: #f7f9fb;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (min-width: 740px) {
+  .item-content {
+    padding: calc(4.79167*1vw) calc(3.47222*1vw);
+  }
+  .smTextDiv {
+    display: none;
+  }
+  .lgTextDiv {
+    display: block;
+  }
+
+  .flexDiv {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .chooseitem :hover {
+    background-color: #fff;
+    box-shadow: 0 0 20px 10px #f7f9fb;
+    transition-property: transform, background-color, -webkit-transform;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+    transform: scale(1);
+    transform-origin: 50% 100%;
+  }
+  
+  .chooseitem :hover .pText {
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-property: transform, opacity, -webkit-transform;
+    box-shadow: none;
+  }
+  
+  .chooseitem :hover .item-icon {
+    opacity: 1;
+    margin-top: -30px;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-property: transform, margin-top, -webkit-transform;
+    box-shadow: none;
+  }
+  
+  .chooseitem :hover .item-iconholder {
+    box-shadow: none;
+  }
+  
+  .chooseitem :hover .headingH3 {
+    box-shadow: none;
+  }
+  
+  .chooseitem :hover .icon {
+    box-shadow: none;
+  }
+  
+  .chooseitem :hover .chooseitem-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform-origin: 50% 100%;
+    box-shadow: 10px 10px 20px -30px #f7f9fb;
+    transform: scale(1);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+  }
+
+  .pText {
+    margin: 1.25rem 0 0;
+    font-size: calc(1.04167*1vw);
+    line-height: 1.47;
+    transform: translateY(0);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-property: transform, opacity, -webkit-transform;
+  }
+
+  .headingDiv {
+    font-size: calc(3.05556*1vw);
+  }
+
+  .itemWhiteLg {
+    background-color: #fff !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media only screen and (max-width: 440px) {
+  .smTextDiv {
+    width: 100%;
+    display: block;
+  }
+
+  .lgTextDiv {
+    display: none;
+  }
+
+  .textDiv {
+    height: auto;
+  }
+
+  .flexDiv {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    position: relative;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 0 10px;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow-x: scroll;
+  }
+
+  .chooseitem {
+    background-color: #f7f9fb !important;
+    padding: 17px 40px;
+    width: 280px;
+    height: 280px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin: 10px 10px;
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .headingH3 {
+    font-size: 18px !important;
+    font-weight: bolder;
+  }
+
+  .pText {
+    font-size: 13px;
+  }
+}
+
+.item-content {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.item-iconholder {
+  width: 60px;
+  height: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  position: relative;
 }
